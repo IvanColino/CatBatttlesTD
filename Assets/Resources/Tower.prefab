@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 7298779185761622802}
   - component: {fileID: 1406177708865220085}
   - component: {fileID: 4449804877317272532}
+  - component: {fileID: 8993896478631556588}
   - component: {fileID: 3944952234260799040}
-  - component: {fileID: -4994682951593624383}
+  - component: {fileID: -8788119040879578656}
+  - component: {fileID: 7803553154339822758}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Tower
@@ -30,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 534.8084, y: 287.2673, z: 0}
-  m_LocalScale: {x: 108, y: 108, z: 108}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3612607674101975268}
@@ -123,6 +125,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &8993896478631556588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331665837208166408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f706a778e4b323443ab9d359fe3f2747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3944952234260799040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +156,25 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8214824083102318804, guid: 2572471e7f7b24f4fb31cd0b99befd04, type: 3}
   firePoint: {fileID: 0}
   fireRate: 0.5
---- !u!114 &-4994682951593624383
+  currentTarget: {fileID: 0}
+  panel: {fileID: 0}
+--- !u!114 &-8788119040879578656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331665837208166408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &7803553154339822758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,7 +192,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -8788119040879578656}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

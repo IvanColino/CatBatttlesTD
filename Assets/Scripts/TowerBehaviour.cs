@@ -11,17 +11,18 @@ public class TowerBehaviour : MonoBehaviourPun
     public Transform firePoint;
     public float fireRate = 0.5f;
     private float fireCountdown = 0f;
-    private Transform currentTarget;
-
-
+    public Transform currentTarget;
+    public GameObject panel;
 
     void Start()
     {
         if (firePoint == null)
         {
             firePoint = transform.Find("FirePoint");
+            
         }
     }
+
     void Update()
     {
         if (photonView.IsMine)
@@ -33,13 +34,11 @@ public class TowerBehaviour : MonoBehaviourPun
 
     void DetectEnemies()
     {
-        // Reset current target if it moves out of range or is destroyed
         if (currentTarget != null && Vector2.Distance(transform.position, currentTarget.position) > detectionRadius)
         {
             currentTarget = null;
         }
 
-        // Find new target if there is no current target
         if (currentTarget == null)
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius, enemyLayer);
@@ -48,7 +47,7 @@ public class TowerBehaviour : MonoBehaviourPun
                 if (hit.CompareTag("Enemy"))
                 {
                     currentTarget = hit.transform;
-                    break; // Assign the first enemy found as the target
+                    break;
                 }
             }
         }
@@ -60,27 +59,31 @@ public class TowerBehaviour : MonoBehaviourPun
         {
             if (fireCountdown <= 0f)
             {
-                Shoot(currentTarget);
+                photonView.RPC("Shoot", RpcTarget.All, currentTarget.position);
                 fireCountdown = 1f / fireRate; // Reset fire countdown
             }
             fireCountdown -= Time.deltaTime; // Decrement countdown
         }
     }
 
-    void Shoot(Transform enemy)
+    [PunRPC]
+    void Shoot(Vector3 enemyPosition)
     {
-        if (Vector2.Distance(transform.position, enemy.position) <= detectionRadius)
+        if (Vector2.Distance(transform.position, enemyPosition) <= detectionRadius)
         {
             GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+          
             BulletBehaviour bullet = bulletGO.GetComponent<BulletBehaviour>();
             if (bullet != null)
-                bullet.Seek(enemy);
+            {
+                Transform enemyTransform = ((Collider2D)Physics2D.OverlapPoint(enemyPosition, enemyLayer)).transform;
+                bullet.Seek(enemyTransform);
+            }
         }
     }
 
     private void OnDrawGizmos()
     {
-        // Visualize detection radius in the editor
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
