@@ -16,6 +16,7 @@ public class TowerBehaviour : MonoBehaviourPun
 
     void Start()
     {
+        PhotonView photonView = GetComponent<PhotonView>();
         if (firePoint == null)
         {
             firePoint = transform.Find("FirePoint");
@@ -71,13 +72,13 @@ public class TowerBehaviour : MonoBehaviourPun
     {
         if (Vector2.Distance(transform.position, enemyPosition) <= detectionRadius)
         {
-            GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-          
+            GameObject bulletGO = PhotonNetwork.Instantiate(bulletPrefab.name, firePoint.position, Quaternion.identity);
             BulletBehaviour bullet = bulletGO.GetComponent<BulletBehaviour>();
             if (bullet != null)
             {
                 Transform enemyTransform = ((Collider2D)Physics2D.OverlapPoint(enemyPosition, enemyLayer)).transform;
                 bullet.Seek(enemyTransform);
+                bullet.SetOwner(photonView.OwnerActorNr);
             }
         }
     }
