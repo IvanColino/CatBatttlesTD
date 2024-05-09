@@ -1,12 +1,25 @@
 using UnityEngine;
 using Photon.Pun;
+using ExitGames.Client.Photon.StructWrapping;
 
 public class BulletBehaviour : MonoBehaviourPun
 {
     private Transform target;
     public float speed = 70f;
     private float originalZ;  // Variable para almacenar la posición z original de la bala
-
+    private int ownerActorNumber;
+    private PhotonView photonView;
+    public GameObject Funcionbotones;
+    public void Start()
+    {
+        if (target == null)
+        {
+            Destroy(gameObject); // Destruir la bala si el objetivo ya no existe
+            return;
+        }
+      Funcionbotones = GameObject.Find("Funcionbotones");
+      photonView = Funcionbotones.GetComponent<PhotonView>();
+    }
     // Método para dirigir la bala hacia el enemigo
     public void Seek(Transform _target)
     {
@@ -32,14 +45,28 @@ public class BulletBehaviour : MonoBehaviourPun
         // Verificar si la bala ha alcanzado al objetivo
         if (Vector3.Distance(transform.position, newTargetPos) < 0.1f)
         {
-            HitTarget();
+            
+            Shoot();
+           
         }
     }
 
+    private void Shoot () {
+        HitTarget();
+        photonView.RPC("AddPoints", RpcTarget.AllBuffered, ownerActorNumber); }
+    
+
+    public void SetOwner(int actorNumber)
+    {
+        ownerActorNumber = actorNumber;
+    }
     [PunRPC]
     void HitTarget()
     {
-         Destroy(target.gameObject); // Destruir el objeto del enemigo (opcional)
-         Destroy(gameObject); // Destruir la bala
+
+
+        Destroy(target.gameObject);
+        Destroy(gameObject);
+
     }
 }

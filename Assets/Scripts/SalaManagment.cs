@@ -12,9 +12,10 @@ public class SalaManager : MonoBehaviourPunCallbacks
     public Button crear, unirse,empezar;
     public TextMeshProUGUI listadoJugadores, txtcrear, txtunirse, txtLobby;
     public List<string> Listajugadores = new List<string>();
-    public GameObject panelmenu, paneljuego,paneljuego2,square;
+    public GameObject panelmenu, paneljuego,paneljuego2,square,funcionbotones;
     public PhotonView photonView;
     private const string PropiedadJugadores = "JugadoresEnSala"; // Nombre de la propiedad personalizada
+
 
     private void Start()
     {
@@ -124,10 +125,12 @@ public class SalaManager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void EmpezarPartida()
     {
+       
         panelmenu.SetActive(false);
         paneljuego.SetActive(true);
         paneljuego2.SetActive(true);
         square.SetActive(true);
+        funcionbotones.GetComponent<TowerManagement>().partidainiciada = true;
     }
     public void OnEmpezarPartidaButtonClicked()
     {
