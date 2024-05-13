@@ -2,6 +2,9 @@ Library/
 Temp/
 Logs/shadercompiler-UnityShaderCompiler.exe1.log
 Logs/shadercompiler-UnityShaderCompiler.exe2.log
+Logs/AssetImportWorker0.log
+Logs/AssetImportWorker1.log
+Logs/shadercompiler-AssetImportWorker0.log
 Logs/
 Cliente/apk.apk
 Cliente/UnityPlayer.dll
@@ -53,10 +56,8 @@ UserSettings/Layouts/CurrentMaximizeLayout.dwlt
 .vs/TFG/FileContentIndex/3ebdb1b3-3948-4ec9-915e-d3f4145a3ae3.vsidx
 .vs/TFG/FileContentIndex/d581334f-932b-45bb-8496-feed0e40f14e.vsidx
 *.vsidx
-Cats.sln
-.vs/Cats/v17/.suo
 Assets/Photon.meta
-Assets/Sonido.meta
+Assets/Render.meta
 Assets/TextMesh Pro.meta
 Assets/Photon/PhotonChat.meta
 Assets/Photon/PhotonLibs.meta
@@ -88,8 +89,6 @@ Assets/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.pdb
 Assets/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.pdb.meta
 Assets/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.xml
 Assets/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.xml.meta
-Assets/Photon/PhotonLibs/WebSocket/PhotonWebSocket.asmdef
-Assets/Photon/PhotonLibs/WebSocket/PhotonWebSocket.asmdef.meta
 Assets/Photon/PhotonLibs/WebSocket/SocketWebTcp.cs
 Assets/Photon/PhotonLibs/WebSocket/SocketWebTcp.cs.meta
 Assets/Photon/PhotonLibs/WebSocket/WebSocket.cs
@@ -957,8 +956,6 @@ Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/TextButtonTransition.cs
 Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/TextButtonTransition.cs.meta
 Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/TextToggleIsOnTransition.cs
 Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/TextToggleIsOnTransition.cs.meta
-Assets/Sonido/Mana-Mana-ABC-Kids.wav
-Assets/Sonido/Mana-Mana-ABC-Kids.wav.meta
 Assets/TextMesh Pro/Documentation.meta
 Assets/TextMesh Pro/Examples & Extras.meta
 Assets/TextMesh Pro/Fonts.meta
@@ -1281,4 +1278,3 @@ Assets/TextMesh Pro/Sprites/EmojiOne.json
 Assets/TextMesh Pro/Sprites/EmojiOne.json.meta
 Assets/TextMesh Pro/Sprites/EmojiOne.png
 Assets/TextMesh Pro/Sprites/EmojiOne.png.meta
-Assets/Render.meta
