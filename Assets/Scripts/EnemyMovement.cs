@@ -13,7 +13,7 @@ public class MoveEnemies : MonoBehaviourPun
     private GameObject[] waypointsObjects = new GameObject[12];
     public int playerHealth = 0;
     private TextMeshProUGUI text;
-    private string url = "https://catbattle.duckdns.org/api/win";
+    
 
 
     void Start()
