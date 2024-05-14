@@ -1891,11 +1891,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8c7f2b88614654eabace869869acf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6746248861206462364, guid: cb88a6f490b3cb24db3e6b68cbd63247, type: 3}
+  rounds:
+  - enemyPrefab: {fileID: 6746248861206462364, guid: cb88a6f490b3cb24db3e6b68cbd63247, type: 3}
+    enemyCount: 5
+  - enemyPrefab: {fileID: 6746248861206462364, guid: 3aff655681fc40f46b98d814d34bcfdb, type: 3}
+    enemyCount: 5
+  - enemyPrefab: {fileID: 6746248861206462364, guid: cb88a6f490b3cb24db3e6b68cbd63247, type: 3}
+    enemyCount: 10
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
   spawnInterval: 5
   spawnPoints:
   - {fileID: 533468127}
   enemiesPerRound: 5
+  texto_Ronda: {fileID: 0}
 --- !u!1 &547222684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,11 +2140,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8c7f2b88614654eabace869869acf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3592109577933046027, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+  rounds:
+  - enemyPrefab: {fileID: 3592109577933046027, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+    enemyCount: 5
+  - enemyPrefab: {fileID: 8929117299504756221, guid: afaf9f7eff3896340a57d4c919c8096d, type: 3}
+    enemyCount: 5
+  - enemyPrefab: {fileID: 3592109577933046027, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+    enemyCount: 10
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
+  - enemyPrefab: {fileID: 0}
+    enemyCount: 0
   spawnInterval: 5
   spawnPoints:
   - {fileID: 647513766}
   enemiesPerRound: 5
+  texto_Ronda: {fileID: 0}
 --- !u!114 &647513768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3021,37 +3083,6 @@ RectTransform:
   m_AnchoredPosition: {x: 48, y: -125}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &897075058
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 897075059}
-  m_Layer: 0
-  m_Name: Tonto
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &897075059
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897075058}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 542.1309, y: 283.27036, z: 1.4374847}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &904595627
 GameObject:
   m_ObjectHideFlags: 0
@@ -3431,7 +3462,7 @@ SpriteRenderer:
   m_Size: {x: 5.26, y: 4.61}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1054705958
@@ -3950,7 +3981,7 @@ SpriteRenderer:
   m_Size: {x: 5.26, y: 4.61}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1186373970
@@ -6155,4 +6186,3 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1655132081}
   - {fileID: 1062441435}
-  - {fileID: 897075059}

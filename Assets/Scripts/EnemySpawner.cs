@@ -1,14 +1,18 @@
 using Photon.Pun;
 using System.Collections;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviourPun
 {
-    public GameObject enemyPrefab; // Prefab del enemigo
-    public float spawnInterval = 50f; // Intervalo entre cada spawn
+    public RoundData[] rounds;
+ 
+    public float spawnInterval = 200f; // Intervalo entre cada spawn
     public Transform[] spawnPoints; // Puntos de aparición
     public int enemiesPerRound = 5; // Número de enemigos por ronda
     private int currentRound = 0;
+    public GameObject texto_Ronda;
 
     private void Start()
     {
@@ -22,20 +26,20 @@ public class EnemySpawner : MonoBehaviourPun
     {
         while (true)
         {
-            yield return new WaitForSeconds(spawnInterval); // Espera entre rondas
-            int enemiesSpawned = 0;
-            while (enemiesSpawned < enemiesPerRound)
+            foreach (var round in rounds)
             {
-                foreach (Transform spawnPoint in spawnPoints)
+                yield return new WaitForSeconds(spawnInterval); // Espera entre rondas
+                for (int i = 0; i < round.enemyCount; i++)
                 {
-                    if (enemiesSpawned >= enemiesPerRound) break;
-                    PhotonNetwork.Instantiate(enemyPrefab.name, spawnPoint.position, Quaternion.identity);
-                    enemiesSpawned++;
+                    Transform spawnPoint = spawnPoints[i % spawnPoints.Length];
+                    PhotonNetwork.Instantiate(round.enemyPrefab.name, spawnPoint.position, Quaternion.identity);
                     yield return new WaitForSeconds(1f); // Espera entre enemigos
                 }
+                currentRound++;
+                photonView.RPC("UpdateRoundOnClients", RpcTarget.Others, currentRound);
+                if (currentRound >= rounds.Length)
+                    break;  
             }
-            currentRound++;
-            photonView.RPC("UpdateRoundOnClients", RpcTarget.Others, currentRound);
         }
     }
 
@@ -43,5 +47,12 @@ public class EnemySpawner : MonoBehaviourPun
     void UpdateRoundOnClients(int round)
     {
         currentRound = round; // Actualiza la ronda actual en todos los clientes
+        texto_Ronda.GetComponent<TextMeshProUGUI>().text = "Ronda: " + currentRound+"/15";
+    }
+    [System.Serializable]
+    public class RoundData
+    {
+        public GameObject enemyPrefab;  // Puedes tener diferentes prefabs para diferentes rondas
+        public int enemyCount;          // Cantidad de enemigos en esta ronda
     }
 }

@@ -60,14 +60,16 @@ public class TowerBehaviour : MonoBehaviourPun
         {
             if (fireCountdown <= 0f)
             {
-                photonView.RPC("Shoot", RpcTarget.All, currentTarget.position);
+                if (photonView.IsMine) // Asegurarse de que solo el dueño instancie la bala
+                {
+                    Shoot(currentTarget.position);
+                }
                 fireCountdown = 1f / fireRate; // Reset fire countdown
             }
             fireCountdown -= Time.deltaTime; // Decrement countdown
         }
     }
 
-    [PunRPC]
     void Shoot(Vector3 enemyPosition)
     {
         if (Vector2.Distance(transform.position, enemyPosition) <= detectionRadius)
@@ -76,12 +78,14 @@ public class TowerBehaviour : MonoBehaviourPun
             BulletBehaviour bullet = bulletGO.GetComponent<BulletBehaviour>();
             if (bullet != null)
             {
-                Transform enemyTransform = ((Collider2D)Physics2D.OverlapPoint(enemyPosition, enemyLayer)).transform;
-                bullet.Seek(enemyTransform);
-                bullet.SetOwner(photonView.OwnerActorNr);
+                bullet.photonView.TransferOwnership(PhotonNetwork.LocalPlayer.ActorNumber);
+                bullet.Seek(((Collider2D)Physics2D.OverlapPoint(enemyPosition, enemyLayer)).transform);
+                bullet.ownerActorNumber = photonView.OwnerActorNr;
             }
         }
     }
+
+
 
     private void OnDrawGizmos()
     {

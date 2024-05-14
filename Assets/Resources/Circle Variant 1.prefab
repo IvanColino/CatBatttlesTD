@@ -8,8 +8,24 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6341391809808793397, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+      propertyPath: maxHealth
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -5170769300684957281, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
       propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 994702813335854683, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 994702813335854683, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 994702813335854683, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3490455262623261380, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
@@ -54,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3592109577933046027, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
       propertyPath: m_Name
-      value: Circle Variant
+      value: Circle Variant 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -7730560331547352892, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
@@ -95,6 +111,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speed: 1
+  speed: 2
   waypointIndex: 0
   text: {fileID: 0}
