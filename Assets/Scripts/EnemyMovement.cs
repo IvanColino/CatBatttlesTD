@@ -77,7 +77,7 @@ public class MoveEnemies : MonoBehaviourPun
     void DamagePlayer()
     {
 
-        playerHealth -= 10;
+        playerHealth =playerHealth-1;
         text.text = playerHealth.ToString(); // Actualiza la UI solo aquí
 
         if (PhotonNetwork.IsMasterClient && playerHealth <= 0)

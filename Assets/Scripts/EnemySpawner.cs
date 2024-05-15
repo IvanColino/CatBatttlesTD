@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviourPun
     public float spawnInterval = 200f; // Intervalo entre cada spawn
     public Transform[] spawnPoints; // Puntos de aparición
     public int enemiesPerRound = 5; // Número de enemigos por ronda
-    private int currentRound = 0;
+    private int currentRound = 1;
     public GameObject texto_Ronda;
 
     private void Start()
@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviourPun
                     yield return new WaitForSeconds(1f); // Espera entre enemigos
                 }
                 currentRound++;
-                photonView.RPC("UpdateRoundOnClients", RpcTarget.Others, currentRound);
+                photonView.RPC("UpdateRoundOnClients", RpcTarget.All, currentRound);
                 if (currentRound >= rounds.Length)
                     break;  
             }
