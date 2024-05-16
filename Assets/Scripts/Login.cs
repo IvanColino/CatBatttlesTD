@@ -106,10 +106,19 @@ public class Login : MonoBehaviour
             if (apiResponse.result != null && apiResponse.result.authentication)
             {
                 Debug.Log($"Login exitoso: Usuario ID {apiResponse.result.user_id}, Login {apiResponse.result.login}, Monedas {apiResponse.result.monedas}");
+                PlayerPrefs.SetInt("UserID", apiResponse.result.user_id);
+                PlayerPrefs.SetString("Username", apiResponse.result.login);
+                PlayerPrefs.SetInt("Monedas", apiResponse.result.monedas);
+                PlayerPrefs.Save();
                 loginpanel.SetActive(false);
                 BotonLogin.SetActive(false);
+                usernameInputField.text = "";
+                passwordInputField.text = "";
                 aplicacionPrincipalPanel.SetActive(true);
                 BotonCerrarSesion.SetActive(true);
+                Debug.Log("UserID guardado: " + PlayerPrefs.GetInt("UserID"));
+                Debug.Log("Username guardado: " + PlayerPrefs.GetString("Username"));
+                Debug.Log("Monedas guardadas: " + PlayerPrefs.GetInt("Monedas"));
             }
             else
             {
