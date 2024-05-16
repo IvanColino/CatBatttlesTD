@@ -14,7 +14,7 @@ public class SalaManager : MonoBehaviourPunCallbacks
     public List<string> Listajugadores = new List<string>();
     public GameObject panelmenu, paneljuego,paneljuego2,square,funcionbotones;
     public PhotonView photonView;
-    private const string PropiedadJugadores = "JugadoresEnSala"; // Nombre de la propiedad personalizada
+    private const string PropiedadJugadores = "JugadoresEnSala";
 
 
     private void Start()
@@ -91,7 +91,7 @@ public class SalaManager : MonoBehaviourPunCallbacks
         inputUnirse.gameObject.SetActive(false);
         listadoJugadores.gameObject.SetActive(true);
     }
-
+  
     private List<string> ObtenerListaJugadores()
     {
         if (PhotonNetwork.CurrentRoom != null &&
