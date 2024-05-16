@@ -9,6 +9,8 @@ public class FuncionamientoBoton : MonoBehaviour
     public GameObject aplicacionPrincipalPanel;
     public GameObject loginpanel;
     public GameObject registropanel;
+    public GameObject BotonCerrarSesion;
+    public GameObject BotonIniciarSesion;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -20,6 +22,9 @@ public class FuncionamientoBoton : MonoBehaviour
             {
                 case "BotonPlay":
                     AccionPlay();
+                    break;
+                case "BotonCerrarSesion":
+                    CerrarSesion();
                     break;
                 case "BotonShop":
                     AccionShop();
@@ -50,14 +55,40 @@ public class FuncionamientoBoton : MonoBehaviour
         
     }
 
+    public void CerrarSesion()
+    {
+        PlayerPrefs.DeleteKey("UserID");
+        PlayerPrefs.DeleteKey("Username");
+        PlayerPrefs.DeleteKey("Monedas");
+        PlayerPrefs.Save();
+        BotonCerrarSesion.SetActive(false);
+        BotonIniciarSesion.SetActive(true);
+    }
+
     public void AccionPlay()
     {
+        bool sessionActive = PlayerPrefs.HasKey("UserID");
+        if (sessionActive)
+        {
 
+        }
+        else
+        {
+
+        }
     }
 
     public void AccionShop()
     {
+        bool sessionActive = PlayerPrefs.HasKey("UserID");
+        if (sessionActive)
+        {
 
+        }
+        else
+        {
+
+        }
     }
     public void AccionExit()
     {

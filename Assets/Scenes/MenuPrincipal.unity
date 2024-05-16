@@ -283,7 +283,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1290079265}
         m_TargetAssemblyTypeName: FuncionamientoBoton, Assembly-CSharp
         m_MethodName: AccionPlay
         m_Mode: 1
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1290079267}
         m_TargetAssemblyTypeName: Login, Assembly-CSharp
         m_MethodName: AttemptLogin
         m_Mode: 1
@@ -1203,7 +1203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &232033352
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1220,7 +1220,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110, y: 295}
+  m_AnchoredPosition: {x: 110, y: 306}
   m_SizeDelta: {x: 331.9928, y: 105.2528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232033353
@@ -1544,7 +1544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &426381139
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1571,7 +1571,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426381138}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -1878,7 +1878,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1290079265}
         m_TargetAssemblyTypeName: FuncionamientoBoton, Assembly-CSharp
         m_MethodName: AccionLogin
         m_Mode: 1
@@ -1910,7 +1910,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f912b43617233e6469a123e0503e3dc1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ddae4bf3caaa0f48a5a90b507253906, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2454,7 +2454,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1290079266}
         m_TargetAssemblyTypeName: Registro, Assembly-CSharp
         m_MethodName: AttemptRegister
         m_Mode: 1
@@ -2741,8 +2741,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5e065efaf9b94e84e9abff20d73c84a2, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3010,10 +3010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2da877625394c843bf8eea8c31df284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmationPanel: {fileID: 0}
-  aplicacionPrincipalPanel: {fileID: 0}
-  loginpanel: {fileID: 0}
-  registropanel: {fileID: 0}
 --- !u!114 &729575611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3058,8 +3054,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NewBehaviourScript, Assembly-CSharp
+      - m_Target: {fileID: 1290079265}
+        m_TargetAssemblyTypeName: FuncionamientoBoton, Assembly-CSharp
         m_MethodName: AccionExit
         m_Mode: 1
         m_Arguments:
@@ -3336,7 +3332,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1290079265}
         m_TargetAssemblyTypeName: FuncionamientoBoton, Assembly-CSharp
         m_MethodName: AccionPasarRegistro
         m_Mode: 1
@@ -4435,7 +4431,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1290079265}
         m_TargetAssemblyTypeName: FuncionamientoBoton, Assembly-CSharp
         m_MethodName: AccionShop
         m_Mode: 1
@@ -4892,6 +4888,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108195138}
   m_CullTransparentMesh: 1
+--- !u!1 &1149346343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1149346344}
+  - component: {fileID: 1149346346}
+  - component: {fileID: 1149346345}
+  m_Layer: 5
+  m_Name: Iregistro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1149346344
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149346343}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1726507226}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -7.286, y: 291.00012}
+  m_SizeDelta: {x: 529.8704, y: 129.1438}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1149346345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149346343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: db429b852f1ff1948925d93046324b03, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1149346346
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149346343}
+  m_CullTransparentMesh: 1
 --- !u!1 &1165727028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4978,7 +5049,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1165727028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7840163a85bd82446b8e5e11287d7556, type: 3}
+  m_Script: {fileID: 11500000, guid: db45c7764e7f2e64da8fa13220021b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   confirmationPanel: {fileID: 1165727028}
@@ -5128,6 +5199,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1290079264}
+  - component: {fileID: 1290079267}
+  - component: {fileID: 1290079266}
+  - component: {fileID: 1290079265}
   m_Layer: 0
   m_Name: FuncionaBotones
   m_TagString: Untagged
@@ -5150,6 +5224,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1290079265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290079263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf84520170ccc448b58654162371e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  confirmationPanel: {fileID: 1165727028}
+  aplicacionPrincipalPanel: {fileID: 1327290680}
+  loginpanel: {fileID: 13787593}
+  registropanel: {fileID: 1024354049}
+  BotonCerrarSesion: {fileID: 593302155}
+  BotonIniciarSesion: {fileID: 477051077}
+--- !u!114 &1290079266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290079263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855f5b60929cfd3448b29e3b6588071b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameInputField: {fileID: 1099709286}
+  usernameInputField: {fileID: 482510983}
+  passwordInputField: {fileID: 1980490167}
+  registroPanel: {fileID: 1024354049}
+  loginPanel: {fileID: 13787593}
+--- !u!114 &1290079267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290079263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b87489d7f07dc94099283f2285868a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usernameInputField: {fileID: 2079690612}
+  passwordInputField: {fileID: 2067607397}
+  loginpanel: {fileID: 13787593}
+  aplicacionPrincipalPanel: {fileID: 1327290680}
+  BotonLogin: {fileID: 477051077}
+  BotonCerrarSesion: {fileID: 593302155}
 --- !u!1 &1309522675
 GameObject:
   m_ObjectHideFlags: 0
@@ -5650,7 +5777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1424907647
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5668,8 +5795,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 174.7014, y: -138.94}
-  m_SizeDelta: {x: 304.92, y: 249.27}
+  m_AnchoredPosition: {x: 183.95068, y: -139.62991}
+  m_SizeDelta: {x: 302.9531, y: 247.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1424907648
 MonoBehaviour:
@@ -6516,6 +6643,7 @@ RectTransform:
   - {fileID: 1745214633}
   - {fileID: 1382732226}
   - {fileID: 232033352}
+  - {fileID: 1149346344}
   m_Father: {fileID: 1024354050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
