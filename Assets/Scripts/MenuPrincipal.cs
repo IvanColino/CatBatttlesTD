@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class FuncionamientoBoton : MonoBehaviour
 {
@@ -70,7 +71,7 @@ public class FuncionamientoBoton : MonoBehaviour
         bool sessionActive = PlayerPrefs.HasKey("UserID");
         if (sessionActive)
         {
-
+            SceneManager.LoadScene("Juego");
         }
         else
         {
@@ -83,7 +84,7 @@ public class FuncionamientoBoton : MonoBehaviour
         bool sessionActive = PlayerPrefs.HasKey("UserID");
         if (sessionActive)
         {
-
+           
         }
         else
         {
