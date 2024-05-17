@@ -143,6 +143,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8214824083102318804, guid: 2572471e7f7b24f4fb31cd0b99befd04, type: 3}
   firePoint: {fileID: 0}
   fireRate: 0.5
+  nivel: 1
   currentTarget: {fileID: 0}
   panel: {fileID: 0}
 --- !u!114 &-8788119040879578656
