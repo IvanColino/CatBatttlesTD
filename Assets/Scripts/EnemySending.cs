@@ -9,12 +9,15 @@ public class EnemySending : MonoBehaviourPun
     // Prefabs de los enemigos
     public GameObject enemyType1;
     public GameObject enemyType2;
+    public GameObject enemyType21;
+    public GameObject enemyType22;
 
     // Posiciones de spawn de los enemigos
     public GameObject spawner;
     public GameObject spawner2;
     public TextMeshProUGUI pointsJ1;
     public TextMeshProUGUI pointsJ2;
+
 
     void Start()
     {
@@ -47,9 +50,28 @@ public class EnemySending : MonoBehaviourPun
             photonView.RPC("RequestEnemySpawn", RpcTarget.MasterClient);
         }
         }
+    public void OnButtonPress2()
+    {
+        int playerNumber = PhotonNetwork.LocalPlayer.ActorNumber;
 
 
-        [PunRPC]
+        int points1 = int.Parse(pointsJ1.text);
+        int points2 = int.Parse(pointsJ2.text);
+
+        if (PhotonNetwork.LocalPlayer.ActorNumber == 1 && points1 >= 100)
+        {
+            pointsJ1.text = (points1 - 200).ToString();
+            PhotonNetwork.Instantiate(enemyType22.name, spawner2.transform.position, Quaternion.identity);
+        }
+        else if (PhotonNetwork.LocalPlayer.ActorNumber == 2 && points2 >= 100)
+        {
+            pointsJ2.text = (points2 - 200).ToString();
+            Debug.Log("Se va a enviar un enemigo");
+            photonView.RPC("RequestEnemySpawn2", RpcTarget.MasterClient);
+        }
+    }
+
+    [PunRPC]
         void RequestEnemySpawn()
         {
            
@@ -58,6 +80,18 @@ public class EnemySending : MonoBehaviourPun
 
             
         }
+    [PunRPC]
+    void RequestEnemySpawn2()
+    {
+
+        PhotonNetwork.Instantiate(enemyType21.name, spawner.transform.position, Quaternion.identity);
+
+
+
     }
+}
+
+    
+
 
 

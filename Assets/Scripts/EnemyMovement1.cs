@@ -73,11 +73,12 @@ public class MoveEnemies1 : MonoBehaviourPun
     [PunRPC]
     void DamagePlayer2()
     {
-        playerHealth -= 1;  
+        playerHealth = playerHealth- gameObject.GetComponent<EnemyHealth>().maxHealth;  
         Debug.Log("Player Health: " + playerHealth);
         text.text = playerHealth.ToString();
         if (playerHealth <= 0)
         {
+            Time.timeScale = 0;
             if (PhotonNetwork.LocalPlayer.ActorNumber==1)
             {
                 StartCoroutine(SendRequest());

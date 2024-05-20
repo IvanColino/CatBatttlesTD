@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5456137915629633116, guid: 3aff655681fc40f46b98d814d34bcfdb, type: 3}
       propertyPath: maxHealth
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6087597370316416776, guid: 3aff655681fc40f46b98d814d34bcfdb, type: 3}
       propertyPath: sceneViewId

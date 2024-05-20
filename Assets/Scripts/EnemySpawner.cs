@@ -35,12 +35,18 @@ public class EnemySpawner : MonoBehaviourPun
                     PhotonNetwork.Instantiate(round.enemyPrefab.name, spawnPoint.position, Quaternion.identity);
                     yield return new WaitForSeconds(1f); // Espera entre enemigos
                 }
+                
                 currentRound++;
                 photonView.RPC("UpdateRoundOnClients", RpcTarget.All, currentRound);
                 if (currentRound >= rounds.Length)
-                    break;  
+                {
+                    Time.timeScale = 0;
+                }
+
+                  
             }
         }
+        
     }
 
     [PunRPC]

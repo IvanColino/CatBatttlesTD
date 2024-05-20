@@ -77,7 +77,7 @@ public class MoveEnemies : MonoBehaviourPun
     void DamagePlayer()
     {
         
-        playerHealth =playerHealth-1;
+        playerHealth =playerHealth-gameObject.GetComponent<EnemyHealth>().maxHealth;
         text.text = playerHealth.ToString(); // Actualiza la UI solo aquí
 
         if ( playerHealth <= 0)

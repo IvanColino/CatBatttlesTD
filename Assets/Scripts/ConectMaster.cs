@@ -10,8 +10,8 @@ public class ConectMaster : MonoBehaviourPunCallbacks
     void Start()
     {
 
-        //PhotonNetwork.NickName = PlayerPrefs.GetString("Username"); 
-        PhotonNetwork.NickName = "Player"+PhotonNetwork.LocalPlayer.ActorNumber;
+        PhotonNetwork.NickName = PlayerPrefs.GetString("Username");
+        //PhotonNetwork.NickName = "Player"+PhotonNetwork.LocalPlayer.ActorNumber;
         PhotonNetwork.GameVersion = "0.1";
         PhotonNetwork.ConnectUsingSettings();
         Debug.Log("Se va a conectar al Master");
