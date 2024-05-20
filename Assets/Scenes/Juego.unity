@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "3\u20AC"
+  m_text: "100\u20AC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -322,8 +322,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1500\u20AC\n"
+  m_text: "300\u20AC\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -714,7 +714,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3573,34 +3573,34 @@ MonoBehaviour:
   rounds:
   - enemyPrefab: {fileID: 6746248861206462364, guid: cb88a6f490b3cb24db3e6b68cbd63247, type: 3}
     enemyCount: 5
-  - enemyPrefab: {fileID: 6746248861206462364, guid: 3aff655681fc40f46b98d814d34bcfdb, type: 3}
-    enemyCount: 5
+  - enemyPrefab: {fileID: 6746248861206462364, guid: cb88a6f490b3cb24db3e6b68cbd63247, type: 3}
+    enemyCount: 8
   - enemyPrefab: {fileID: 6746248861206462364, guid: cb88a6f490b3cb24db3e6b68cbd63247, type: 3}
     enemyCount: 10
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
+  - enemyPrefab: {fileID: 6746248861206462364, guid: 3aff655681fc40f46b98d814d34bcfdb, type: 3}
+    enemyCount: 3
+  - enemyPrefab: {fileID: 6746248861206462364, guid: 3aff655681fc40f46b98d814d34bcfdb, type: 3}
+    enemyCount: 5
+  - enemyPrefab: {fileID: 6746248861206462364, guid: 3aff655681fc40f46b98d814d34bcfdb, type: 3}
+    enemyCount: 7
+  - enemyPrefab: {fileID: 6746248861206462364, guid: 3aff655681fc40f46b98d814d34bcfdb, type: 3}
+    enemyCount: 10
+  - enemyPrefab: {fileID: 6746248861206462364, guid: cb88a6f490b3cb24db3e6b68cbd63247, type: 3}
+    enemyCount: 12
+  - enemyPrefab: {fileID: 6746248861206462364, guid: cb88a6f490b3cb24db3e6b68cbd63247, type: 3}
+    enemyCount: 14
+  - enemyPrefab: {fileID: 6746248861206462364, guid: cb88a6f490b3cb24db3e6b68cbd63247, type: 3}
+    enemyCount: 16
+  - enemyPrefab: {fileID: 6746248861206462364, guid: 3aff655681fc40f46b98d814d34bcfdb, type: 3}
+    enemyCount: 12
+  - enemyPrefab: {fileID: 6746248861206462364, guid: cb88a6f490b3cb24db3e6b68cbd63247, type: 3}
+    enemyCount: 18
+  - enemyPrefab: {fileID: 6746248861206462364, guid: cb88a6f490b3cb24db3e6b68cbd63247, type: 3}
+    enemyCount: 20
+  - enemyPrefab: {fileID: 6746248861206462364, guid: 3aff655681fc40f46b98d814d34bcfdb, type: 3}
+    enemyCount: 20
+  - enemyPrefab: {fileID: 8072132315207508869, guid: ead47e6b2346e974e86bd892d19c0b45, type: 3}
+    enemyCount: 1
   spawnInterval: 5
   spawnPoints:
   - {fileID: 533468127}
@@ -3623,7 +3623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &543606760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3746,14 +3746,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570280066}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 403607799}
   m_Father: {fileID: 2138587036}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1066, y: 474}
@@ -3835,8 +3835,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 35a72348a78fe014288573d329efa471, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4113,34 +4113,34 @@ MonoBehaviour:
   rounds:
   - enemyPrefab: {fileID: 3592109577933046027, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
     enemyCount: 5
-  - enemyPrefab: {fileID: 8929117299504756221, guid: afaf9f7eff3896340a57d4c919c8096d, type: 3}
-    enemyCount: 5
+  - enemyPrefab: {fileID: 3592109577933046027, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+    enemyCount: 8
   - enemyPrefab: {fileID: 3592109577933046027, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
     enemyCount: 10
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
-  - enemyPrefab: {fileID: 0}
-    enemyCount: 0
+  - enemyPrefab: {fileID: 8929117299504756221, guid: afaf9f7eff3896340a57d4c919c8096d, type: 3}
+    enemyCount: 3
+  - enemyPrefab: {fileID: 8929117299504756221, guid: afaf9f7eff3896340a57d4c919c8096d, type: 3}
+    enemyCount: 5
+  - enemyPrefab: {fileID: 8929117299504756221, guid: afaf9f7eff3896340a57d4c919c8096d, type: 3}
+    enemyCount: 7
+  - enemyPrefab: {fileID: 8929117299504756221, guid: afaf9f7eff3896340a57d4c919c8096d, type: 3}
+    enemyCount: 10
+  - enemyPrefab: {fileID: 3592109577933046027, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+    enemyCount: 12
+  - enemyPrefab: {fileID: 3592109577933046027, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+    enemyCount: 14
+  - enemyPrefab: {fileID: 3592109577933046027, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+    enemyCount: 16
+  - enemyPrefab: {fileID: 8929117299504756221, guid: afaf9f7eff3896340a57d4c919c8096d, type: 3}
+    enemyCount: 12
+  - enemyPrefab: {fileID: 3592109577933046027, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+    enemyCount: 18
+  - enemyPrefab: {fileID: 3592109577933046027, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+    enemyCount: 20
+  - enemyPrefab: {fileID: 8929117299504756221, guid: afaf9f7eff3896340a57d4c919c8096d, type: 3}
+    enemyCount: 20
+  - enemyPrefab: {fileID: 840711385525339168, guid: 7254a450a6a93ab4e8d7fe6cecabefcc, type: 3}
+    enemyCount: 1
   spawnInterval: 5
   spawnPoints:
   - {fileID: 647513766}
@@ -4225,7 +4225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1500\u20AC\n"
+  m_text: "300\u20AC\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5944,7 +5944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: 0
-  pointsPerKill: 10
+  pointsPerKill: 25
 --- !u!114 &1062441440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5977,6 +5977,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Upgradepanel: {fileID: 543606759}
   Upgradepanel2: {fileID: 1429945426}
+  pointsJ1: {fileID: 1664494396}
+  pointsJ2: {fileID: 1701808217}
 --- !u!1 &1069156597
 GameObject:
   m_ObjectHideFlags: 0
@@ -6168,7 +6170,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +
+  m_text: '200
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6195,8 +6199,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7100,15 +7104,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 1953c4ac1be18c54ab43605423459e46, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8935,7 +8939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3000
+  m_text: 300
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10660,15 +10664,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.11774653, b: 0.11774653, a: 0.392}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 1b00ec96fdcfc12408759668531e073c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

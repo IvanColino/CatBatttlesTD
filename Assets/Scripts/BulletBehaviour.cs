@@ -28,6 +28,9 @@ public class BulletBehaviour : MonoBehaviourPun
         if (target != null)  // Verificar si el objetivo sigue siendo válido.
         {
             Vector3 targetPos = new Vector3(target.position.x, target.position.y, originalZ);
+            Vector3 direction = targetPos - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90)); // Ajustar ángulo si es necesario
             transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
         }
     }

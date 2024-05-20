@@ -67,12 +67,10 @@ public class TowerManagement : MonoBehaviour
             {
 
                 Vector2 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                if (clickPosition.x < 538 && PhotonNetwork.LocalPlayer.ActorNumber == 1)
+                Debug.Log(clickPosition);
+                if ((clickPosition.x < 538 && PhotonNetwork.LocalPlayer.ActorNumber == 1) || (clickPosition.x > 541 && PhotonNetwork.LocalPlayer.ActorNumber == 2))
                 {
-                    FinalizeTowerPlacement();
-                }
-                else if (clickPosition.x > 541 && PhotonNetwork.LocalPlayer.ActorNumber == 2)
-                {
+                    Debug.Log("HOla entre");
                     FinalizeTowerPlacement();
                 }
                 else

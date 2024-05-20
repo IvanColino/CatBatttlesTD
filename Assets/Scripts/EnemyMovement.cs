@@ -76,13 +76,18 @@ public class MoveEnemies : MonoBehaviourPun
     [PunRPC]
     void DamagePlayer()
     {
-
+        
         playerHealth =playerHealth-1;
         text.text = playerHealth.ToString(); // Actualiza la UI solo aquí
 
-        if (PhotonNetwork.IsMasterClient && playerHealth <= 0)
+        if ( playerHealth <= 0)
         {
-            StartCoroutine(SendRequest());
+            Time.timeScale = 0;
+            if (PhotonNetwork.LocalPlayer.ActorNumber == 2)
+            {
+                StartCoroutine(SendRequest());
+            }
+            
         }
     }
 
@@ -96,8 +101,10 @@ public class MoveEnemies : MonoBehaviourPun
 
     IEnumerator SendRequest()
     {
+        int playerid = PlayerPrefs.GetInt("UserID");
+        Debug.Log("Enviando solicitud de victoria para el jugador con ID: " + playerid);
         string url = "https://catbattle.duckdns.org/api/win";
-        string json = "{\"user_id\": 7}"; // Formato correcto de JSON como string
+        string json = "{\"user_id\": "+playerid+"}"; // Formato correcto de JSON como string
         UnityWebRequest request = UnityWebRequest.Put(url, json); // Usar PUT si la API lo requiere, o cambiar a POST si es necesario
         Debug.Log("Enviando solicitud a " + url + " con JSON: " + json);
         request.SetRequestHeader("Content-Type", "application/json"); // Establecer el encabezado Content-Type como application/json
