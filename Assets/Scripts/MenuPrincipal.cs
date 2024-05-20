@@ -7,17 +7,19 @@ public class FuncionamientoBoton : MonoBehaviour
 {
     public GameObject confirmationPanel;
     public GameObject aplicacionPrincipalPanel;
+    public GameObject tiendapanel;
     public GameObject loginpanel;
     public GameObject registropanel;
     public GameObject BotonCerrarSesion;
     public GameObject BotonIniciarSesion;
+    public GameObject FuncionBoton;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        // Verifica si el evento táctil es un toque en este objeto
+        // Verifica si el evento tï¿½ctil es un toque en este objeto
         if (eventData.pointerPress == gameObject)
         {
-            // Llama a la función correspondiente según el nombre del botón
+            // Llama a la funciï¿½n correspondiente segï¿½n el nombre del botï¿½n
             switch (gameObject.name)
             {
                 case "BotonPlay":
@@ -83,7 +85,11 @@ public class FuncionamientoBoton : MonoBehaviour
         bool sessionActive = PlayerPrefs.HasKey("UserID");
         if (sessionActive)
         {
-
+            aplicacionPrincipalPanel.SetActive(false);
+            BotonCerrarSesion.SetActive(false);
+            BotonIniciarSesion.SetActive(false);
+            tiendapanel.SetActive(true);
+            FuncionBoton.GetComponent<BuySkin>().CheckIfSkinPurchased();
         }
         else
         {
