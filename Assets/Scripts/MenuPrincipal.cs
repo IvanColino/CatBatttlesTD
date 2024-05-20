@@ -12,6 +12,7 @@ public class FuncionamientoBoton : MonoBehaviour
     public GameObject registropanel;
     public GameObject BotonCerrarSesion;
     public GameObject BotonIniciarSesion;
+    public GameObject panelOK;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -75,7 +76,8 @@ public class FuncionamientoBoton : MonoBehaviour
         }
         else
         {
-
+            aplicacionPrincipalPanel.SetActive(false);
+            panelOK.SetActive(true);
         }
     }
 
@@ -88,9 +90,17 @@ public class FuncionamientoBoton : MonoBehaviour
         }
         else
         {
-
+            aplicacionPrincipalPanel.SetActive(false);
+            panelOK.SetActive(true);
         }
     }
+
+    public void AccionOK()
+    {
+        panelOK.SetActive(false);
+        aplicacionPrincipalPanel.SetActive(true);
+    }
+
     public void AccionExit()
     {
         aplicacionPrincipalPanel.SetActive(false);
