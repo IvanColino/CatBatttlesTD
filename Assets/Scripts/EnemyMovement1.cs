@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class MoveEnemies1 : MonoBehaviourPun
 {
@@ -12,8 +13,14 @@ public class MoveEnemies1 : MonoBehaviourPun
     private GameObject[] waypointsObjects = new GameObject[12];
     public TextMeshProUGUI text;
     private int playerHealth = 100;
+    private GameObject  panelganJ1, panelperJ2,paneljuego1, paneljuego2;
+
     void Start()
     {
+        paneljuego1 = GameObject.Find("PanelManager").GetComponent<panelMaangement>().paneljuego1;
+        paneljuego2 = GameObject.Find("PanelManager").GetComponent<panelMaangement>().paneljuego2;
+        panelperJ2 = GameObject.Find("PanelManager").GetComponent<panelMaangement>().panelperJ2;
+        panelganJ1 = GameObject.Find("PanelManager").GetComponent<panelMaangement>().panelganJ1;
         text = GameObject.Find("Player" + 2 + "HP").GetComponent<TextMeshProUGUI>();
         if (!photonView.IsMine)
         {
@@ -79,6 +86,7 @@ public class MoveEnemies1 : MonoBehaviourPun
         if (playerHealth <= 0)
         {
             Time.timeScale = 0;
+            photonView.RPC("GameOver2", RpcTarget.AllBuffered);
             if (PhotonNetwork.LocalPlayer.ActorNumber==1)
             {
                 StartCoroutine(SendRequest());
@@ -111,6 +119,18 @@ public class MoveEnemies1 : MonoBehaviourPun
             Debug.Log("Respuesta de la solicitud: " + request.downloadHandler.text);
         }
     }
+    [PunRPC]
+   
+    void GameOver2()
+    {
+        GameObject.Find("Funcionbotones").GetComponent<TowerManagement>().partidainiciada = false;
+        paneljuego1.SetActive(false);
+        paneljuego2.SetActive(false);
+        panelganJ1.SetActive(true);
+        panelperJ2.SetActive(true);
+        GameManager.Instance.LoadMenuAfterDelay(5.0f);
+    }
 
 
+    
 }

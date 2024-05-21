@@ -37,10 +37,11 @@ public class TowerUpgrades : MonoBehaviour
        
        
         selectedTower = tower;
-        
+      
        
         if (selectedTower.photonView.IsMine && PhotonNetwork.LocalPlayer.ActorNumber == 1)
         {
+            Upgradepanel.SetActive(false);
             Upgradepanel.SetActive(true);
             for (int i = 1; i <= 6; i++)
             {
@@ -64,7 +65,7 @@ public class TowerUpgrades : MonoBehaviour
         }
         else if (selectedTower.photonView.IsMine && PhotonNetwork.LocalPlayer.ActorNumber == 2)
         {
-           
+            Upgradepanel2.SetActive(false);
             Upgradepanel2.SetActive(true);
             if (selectedTower.nivel >= 6)
             {
@@ -95,7 +96,7 @@ public class TowerUpgrades : MonoBehaviour
             
             // Aquí podrías actualizar el panel UI con la nueva información de la torre
             Debug.Log("Torre subida de nivel: Nuevo nivel " + selectedTower.nivel);
-            if (PhotonNetwork.LocalPlayer.ActorNumber == 1 &&points1>200)
+            if (PhotonNetwork.LocalPlayer.ActorNumber == 1 &&points1>=200)
             {
                 pointsJ1.text = (points1 - 200).ToString();
                 selectedTower.photonView.RPC("LevelUp", RpcTarget.AllBuffered);
@@ -115,13 +116,14 @@ public class TowerUpgrades : MonoBehaviour
                     GameObject.Find("btnUpgrade").SetActive(true);
                 }
             }
-            else if (PhotonNetwork.LocalPlayer.ActorNumber == 2 && points2 > 200)
+            else if (PhotonNetwork.LocalPlayer.ActorNumber == 2 && points2 >= 200)
             {
                 pointsJ2.text = (points2 - 200).ToString();
                 Upgradepanel2.SetActive(true);
+                selectedTower.photonView.RPC("LevelUp", RpcTarget.AllBuffered);
                 for (int i = 1; i <= selectedTower.nivel; i++)
                 {
-                    selectedTower.photonView.RPC("LevelUp", RpcTarget.AllBuffered);
+                    
                     Toggle toogle = GameObject.Find("Nivel2 " + i).GetComponent<Toggle>();
                     toogle.isOn = true;
                 }

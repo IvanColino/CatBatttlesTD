@@ -11,6 +11,8 @@ public class EnemySending : MonoBehaviourPun
     public GameObject enemyType2;
     public GameObject enemyType21;
     public GameObject enemyType22;
+    public GameObject enemyType31;
+    public GameObject enemyType32;
 
     // Posiciones de spawn de los enemigos
     public GameObject spawner;
@@ -58,16 +60,36 @@ public class EnemySending : MonoBehaviourPun
         int points1 = int.Parse(pointsJ1.text);
         int points2 = int.Parse(pointsJ2.text);
 
-        if (PhotonNetwork.LocalPlayer.ActorNumber == 1 && points1 >= 100)
+        if (PhotonNetwork.LocalPlayer.ActorNumber == 1 && points1 >= 200)
         {
             pointsJ1.text = (points1 - 200).ToString();
             PhotonNetwork.Instantiate(enemyType22.name, spawner2.transform.position, Quaternion.identity);
         }
-        else if (PhotonNetwork.LocalPlayer.ActorNumber == 2 && points2 >= 100)
+        else if (PhotonNetwork.LocalPlayer.ActorNumber == 2 && points2 >= 200)
         {
             pointsJ2.text = (points2 - 200).ToString();
             Debug.Log("Se va a enviar un enemigo");
             photonView.RPC("RequestEnemySpawn2", RpcTarget.MasterClient);
+        }
+    }
+    public void OnButtonPress3()
+    {
+        int playerNumber = PhotonNetwork.LocalPlayer.ActorNumber;
+
+
+        int points1 = int.Parse(pointsJ1.text);
+        int points2 = int.Parse(pointsJ2.text);
+
+        if (PhotonNetwork.LocalPlayer.ActorNumber == 1 && points1 >= 2000)
+        {
+            pointsJ1.text = (points1 - 2000).ToString();
+            PhotonNetwork.Instantiate(enemyType32.name, spawner2.transform.position, Quaternion.identity);
+        }
+        else if (PhotonNetwork.LocalPlayer.ActorNumber == 2 && points2 >= 2000)
+        {
+            pointsJ2.text = (points2 - 2000).ToString();
+            Debug.Log("Se va a enviar un enemigo");
+            photonView.RPC("RequestEnemySpawn3", RpcTarget.MasterClient);
         }
     }
 
@@ -85,6 +107,15 @@ public class EnemySending : MonoBehaviourPun
     {
 
         PhotonNetwork.Instantiate(enemyType21.name, spawner.transform.position, Quaternion.identity);
+
+
+
+    }
+    [PunRPC]
+    void RequestEnemySpawn3()
+    {
+
+        PhotonNetwork.Instantiate(enemyType31.name, spawner.transform.position, Quaternion.identity);
 
 
 

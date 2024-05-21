@@ -6,28 +6,39 @@ using UnityEngine;
 
 public class PointsManagement : MonoBehaviourPun
 {
-    public int playerScore = 0;
+   
     public int pointsPerKill = 10;
+    public int score = 0;
+    
 
     public void UpdateScoreDisplay()
     {
+        // Obtener la referencia al componente TextMeshProUGUI correspondiente según el número de actor
+        TextMeshProUGUI scoreText = null;
+
         if (PhotonNetwork.LocalPlayer.ActorNumber == 1)
         {
-            GameObject.Find("Player1Score").GetComponent<TextMeshProUGUI>().text = playerScore+"";
+            scoreText = GameObject.Find("Player1Score").GetComponent<TextMeshProUGUI>();
+            score=int.Parse(scoreText.text);
+            scoreText.text = (score+pointsPerKill)+"";
         }
         else
         {
-            GameObject.Find("Player2Score").GetComponent<TextMeshProUGUI>().text = playerScore+ "";
+            scoreText = GameObject.Find("Player2Score").GetComponent<TextMeshProUGUI>();
+            score = int.Parse(scoreText.text);
+            scoreText.text = (score + pointsPerKill) + "";
         }
-    }
 
+        // Actualizar el texto de la puntuación
+       
+    }
     [PunRPC]
     public void AddPoints(int actorNumber)
     {
         if (PhotonNetwork.LocalPlayer.ActorNumber == actorNumber)
         {
            Debug.Log("Player " + actorNumber + " has  killed!");
-            playerScore += pointsPerKill; // Asegúrate de tener una variable 'playerScore' y 'pointsPerKill'
+            
             UpdateScoreDisplay(); // Actualiza cualquier UI o lógica relacionada con la puntuación
         }
     }
