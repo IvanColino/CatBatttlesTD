@@ -1,6 +1,9 @@
 using Photon.Pun;
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class MoveEnemies1 : MonoBehaviourPun
 {
@@ -10,8 +13,14 @@ public class MoveEnemies1 : MonoBehaviourPun
     private GameObject[] waypointsObjects = new GameObject[12];
     public TextMeshProUGUI text;
     private int playerHealth = 100;
+    private GameObject  panelganJ1, panelperJ2,paneljuego1, paneljuego2;
+
     void Start()
     {
+        paneljuego1 = GameObject.Find("PanelManager").GetComponent<panelMaangement>().paneljuego1;
+        paneljuego2 = GameObject.Find("PanelManager").GetComponent<panelMaangement>().paneljuego2;
+        panelperJ2 = GameObject.Find("PanelManager").GetComponent<panelMaangement>().panelperJ2;
+        panelganJ1 = GameObject.Find("PanelManager").GetComponent<panelMaangement>().panelganJ1;
         text = GameObject.Find("Player" + 2 + "HP").GetComponent<TextMeshProUGUI>();
         if (!photonView.IsMine)
         {
@@ -71,13 +80,57 @@ public class MoveEnemies1 : MonoBehaviourPun
     [PunRPC]
     void DamagePlayer2()
     {
-        playerHealth -= 1;  
+        playerHealth = playerHealth- gameObject.GetComponent<EnemyHealth>().maxHealth;  
         Debug.Log("Player Health: " + playerHealth);
-        text.text = int.Parse(text.text)-1 + "";
+        text.text = playerHealth.ToString();
         if (playerHealth <= 0)
         {
+            Time.timeScale = 0;
+            photonView.RPC("GameOver2", RpcTarget.AllBuffered);
+            if (PhotonNetwork.LocalPlayer.ActorNumber==1)
+            {
+                StartCoroutine(SendRequest());
+            }
+           
             //  muerte del jugador
             Debug.Log("Player died!");
         }
     }
+    IEnumerator SendRequest()
+    {
+       
+        int playerid = PlayerPrefs.GetInt("UserID");
+        Debug.Log("Sending request to API" + playerid);
+        string url = "https://catbattle.duckdns.org/api/win";
+        string json = "{\"user_id\": " + playerid + "}"; // Formato correcto de JSON como string
+        UnityWebRequest request = UnityWebRequest.Put(url, json); // Usar PUT si la API lo requiere, o cambiar a POST si es necesario
+        Debug.Log("Enviando solicitud a " + url + " con JSON: " + json);
+        request.SetRequestHeader("Content-Type", "application/json"); // Establecer el encabezado Content-Type como application/json
+        request.method = "POST"; // Asegúrate de utilizar el método HTTP correcto que la API espera (POST, en este caso)
+
+        yield return request.SendWebRequest(); // Enviar la solicitud y esperar a que se complete
+
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error al enviar la solicitud: " + request.error);
+        }
+        else
+        {
+            Debug.Log("Respuesta de la solicitud: " + request.downloadHandler.text);
+        }
+    }
+    [PunRPC]
+   
+    void GameOver2()
+    {
+        GameObject.Find("Funcionbotones").GetComponent<TowerManagement>().partidainiciada = false;
+        paneljuego1.SetActive(false);
+        paneljuego2.SetActive(false);
+        panelganJ1.SetActive(true);
+        panelperJ2.SetActive(true);
+        GameManager.Instance.LoadMenuAfterDelay(5.0f);
+    }
+
+
+    
 }

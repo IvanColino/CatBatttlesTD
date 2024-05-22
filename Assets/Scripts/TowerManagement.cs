@@ -65,7 +65,18 @@ public class TowerManagement : MonoBehaviour
             // Si el usuario hace clic en el lugar deseado, confirmar la posición
             if (Input.GetMouseButtonDown(0)) // 0 es el botón izquierdo del ratón
             {
-               FinalizeTowerPlacement();
+
+                Vector2 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Debug.Log(clickPosition);
+                if ((clickPosition.x < 538 && PhotonNetwork.LocalPlayer.ActorNumber == 1) || (clickPosition.x > 541 && PhotonNetwork.LocalPlayer.ActorNumber == 2))
+                {
+                    Debug.Log("HOla entre");
+                    FinalizeTowerPlacement();
+                }
+                else
+                {
+                    Debug.Log("Acción no permitida en esta área.");
+                }
             }
         }
     }

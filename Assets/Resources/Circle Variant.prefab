@@ -12,6 +12,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 994702813335854683, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490455262623261380, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490455262623261380, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490455262623261380, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3490455262623261380, guid: 4e7b2eb03a121b94b9ec0913668f5fb2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 529.31476

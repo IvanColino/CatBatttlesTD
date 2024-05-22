@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using static System.Net.WebRequestMethods;
 
 public class MoveEnemies : MonoBehaviourPun
@@ -13,11 +14,16 @@ public class MoveEnemies : MonoBehaviourPun
     private GameObject[] waypointsObjects = new GameObject[12];
     public int playerHealth = 0;
     private TextMeshProUGUI text;
-    
+    private GameObject panelganJ2, panelperJ1,paneljuego1,paneljuego2;
+
 
 
     void Start()
     {
+        paneljuego1 = GameObject.Find("PanelManager").GetComponent<panelMaangement>().paneljuego1;
+        paneljuego2 = GameObject.Find("PanelManager").GetComponent<panelMaangement>().paneljuego2;
+        panelganJ2 = GameObject.Find("PanelManager").GetComponent<panelMaangement>().panelganJ2;
+        panelperJ1 = GameObject.Find("PanelManager").GetComponent<panelMaangement>().panelperJ1;
         text = GameObject.Find("Player" + 1 + "HP").GetComponent<TextMeshProUGUI>();
         if (!photonView.IsMine)
         {
@@ -76,13 +82,19 @@ public class MoveEnemies : MonoBehaviourPun
     [PunRPC]
     void DamagePlayer()
     {
-
-        playerHealth =playerHealth-1;
+        
+        playerHealth =playerHealth-gameObject.GetComponent<EnemyHealth>().maxHealth;
         text.text = playerHealth.ToString(); // Actualiza la UI solo aquí
 
-        if (PhotonNetwork.IsMasterClient && playerHealth <= 0)
+        if ( playerHealth <= 0)
         {
-            StartCoroutine(SendRequest());
+            photonView.RPC("GameOver1", RpcTarget.AllBuffered);
+            Time.timeScale = 0;
+            if (PhotonNetwork.LocalPlayer.ActorNumber == 2)
+            {
+                StartCoroutine(SendRequest());
+            }
+            
         }
     }
 
@@ -96,8 +108,10 @@ public class MoveEnemies : MonoBehaviourPun
 
     IEnumerator SendRequest()
     {
+        int playerid = PlayerPrefs.GetInt("UserID");
+        Debug.Log("Enviando solicitud de victoria para el jugador con ID: " + playerid);
         string url = "https://catbattle.duckdns.org/api/win";
-        string json = "{\"user_id\": 7}"; // Formato correcto de JSON como string
+        string json = "{\"user_id\": "+playerid+"}"; // Formato correcto de JSON como string
         UnityWebRequest request = UnityWebRequest.Put(url, json); // Usar PUT si la API lo requiere, o cambiar a POST si es necesario
         Debug.Log("Enviando solicitud a " + url + " con JSON: " + json);
         request.SetRequestHeader("Content-Type", "application/json"); // Establecer el encabezado Content-Type como application/json
@@ -115,5 +129,17 @@ public class MoveEnemies : MonoBehaviourPun
         }
     }
 
+    [PunRPC]
+    void GameOver1()
+    {
+        GameObject.Find("Funcionbotones").GetComponent<TowerManagement>().partidainiciada = false;
+        paneljuego1.SetActive(false);
+        paneljuego2.SetActive(false);
+        panelganJ2.SetActive(true);
+        panelperJ1.SetActive(true);
+        GameManager.Instance.LoadMenuAfterDelay(5.0f);
+    }
+
+   
 }
 

@@ -10,10 +10,13 @@ public class TowerBehaviour : MonoBehaviourPun
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float fireRate = 0.5f;
+    public int nivel = 1;
     private float fireCountdown = 0f;
     public Transform currentTarget;
     public GameObject panel;
-
+    
+    //Diccionario para almacenar los niveles de la torre
+    private Dictionary<int, TowerLevel> levels;
     void Start()
     {
         PhotonView photonView = GetComponent<PhotonView>();
@@ -22,6 +25,10 @@ public class TowerBehaviour : MonoBehaviourPun
             firePoint = transform.Find("FirePoint");
             
         }
+        InitializeLevels();
+
+      
+        ApplyLevel(nivel);
     }
 
     void Update()
@@ -84,9 +91,53 @@ public class TowerBehaviour : MonoBehaviourPun
             }
         }
     }
+    void ApplyLevel(int level)
+    {
+        if (levels.ContainsKey(level))
+        {
+            TowerLevel towerLevel = levels[level];
+            fireRate = towerLevel.fireRate;
+            detectionRadius = towerLevel.detectionRadius;
+        }
+    }
+    private void OnMouseDown()
+    {
+        if (photonView.IsMine)
+        {
+            TowerUpgrades.Instance.SelectTower(this);
+        }
+    }
+    [PunRPC]
+    public void LevelUp()
+    {
+        nivel++;
+        ApplyLevel(nivel);
+    }
+    void InitializeLevels()
+    {
+        levels = new Dictionary<int, TowerLevel>
+        {
+            { 1, new TowerLevel(0.5f, 1.75f) },
+            { 2, new TowerLevel(0.75f, 1.80f) },
+            { 3, new TowerLevel(1.0f, 1.85f) },
+            { 4, new TowerLevel(1.25f,1.90f) },
+            { 5, new TowerLevel(1.50f, 1.95f) },
+            { 6, new TowerLevel(1.75f, 2f) },
+           
+        };
+    }
+    [System.Serializable]
+    public class TowerLevel
+    {
+        public float fireRate;
+        public float detectionRadius;
 
-
-
+        public TowerLevel(float fireRate, float detectionRadius)
+        {
+            this.fireRate = fireRate;
+            this.detectionRadius = detectionRadius;
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

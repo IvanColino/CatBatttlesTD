@@ -9,7 +9,9 @@ public class ConectMaster : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        PhotonNetwork.NickName = "Player" + Random.Range(0, 1000);
+
+        PhotonNetwork.NickName = PlayerPrefs.GetString("Username");
+        //PhotonNetwork.NickName = "Player"+PhotonNetwork.LocalPlayer.ActorNumber;
         PhotonNetwork.GameVersion = "0.1";
         PhotonNetwork.ConnectUsingSettings();
         Debug.Log("Se va a conectar al Master");

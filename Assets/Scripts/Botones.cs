@@ -9,7 +9,7 @@ public class Botones : MonoBehaviour
 {
     public TMP_InputField inputCrear,inputUnirse;
     public TextMeshProUGUI textoCrear,textoUnirse;
-    public Button botonCrear, botonUnirse,crear,unirse;
+    public Button botonCrear, botonUnirse,crear,unirse,volver;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +31,10 @@ public class Botones : MonoBehaviour
         textoCrear.gameObject.SetActive(true);
         inputCrear.gameObject.SetActive(true);
         crear.gameObject.SetActive(true);
+        volver.gameObject.SetActive(true);
     } public void UnirseSala()
     {
+        volver.gameObject.SetActive(true);
         botonCrear.gameObject.SetActive(false);
         botonUnirse.gameObject.SetActive(false);
         textoCrear.gameObject.SetActive(false);
@@ -42,5 +44,18 @@ public class Botones : MonoBehaviour
         inputUnirse.gameObject.SetActive(true);
         unirse.gameObject.SetActive(true);
     }
+    public void Volver()
+    {
+        botonCrear.gameObject.SetActive(true);
+        botonUnirse.gameObject.SetActive(true);
+        textoUnirse.gameObject.SetActive(false);
+        inputUnirse.gameObject.SetActive(false);
+        unirse.gameObject.SetActive(false);
+        textoCrear.gameObject.SetActive(false);
+        inputCrear.gameObject.SetActive(false);
+        volver.gameObject.SetActive(false);
+        crear.gameObject.SetActive(false);
+
+    }
+
 }
-    
