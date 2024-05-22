@@ -6678,7 +6678,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 945a7f2e662aa724ab41dca14c9fc282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 5331665837208166408, guid: 80c0adb828c18974fa3b36e7e9d92e48, type: 3}
+  towerPrefab:
+  - {fileID: 5331665837208166408, guid: 80c0adb828c18974fa3b36e7e9d92e48, type: 3}
+  - {fileID: 5213776173094722339, guid: 0569c65b1222a1940b77c3cf44169c63, type: 3}
+  - {fileID: 4927353868605975792, guid: a4d6249fff7a11445a25b5029fd7c228, type: 3}
   currentTowerInstance: {fileID: 0}
   panel: {fileID: 904595627}
   partidainiciada: 0

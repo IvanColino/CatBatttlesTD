@@ -4,7 +4,7 @@ using TMPro;  // Asegúrate de incluir el namespace para Photon
 
 public class TowerManagement : MonoBehaviour
 {
-    public GameObject towerPrefab; // Prefab de la torre
+    public GameObject[] towerPrefab; // Prefab de la torre
     public GameObject currentTowerInstance; // Instancia actual de la torre en movimiento
     public GameObject panel;
     private bool isPlacingTower = false;
@@ -26,8 +26,10 @@ public class TowerManagement : MonoBehaviour
         // Comprobar si el jugador actual es el Jugador 1
         if (towerPrefab != null && currentTowerInstance == null && PhotonNetwork.LocalPlayer.ActorNumber == 1&&playerscore>=300)
         {
-            CreateTower();
-            playerscore=playerscore-300;
+            
+           
+            CreateTower(PlayerPrefs.GetInt("SkinId", 0));
+            playerscore =playerscore-300;
             text.text = playerscore + "";
         }
     }
@@ -36,17 +38,19 @@ public class TowerManagement : MonoBehaviour
         // Comprobar si el jugador actual es el Jugador 1
         if (towerPrefab != null && currentTowerInstance == null && PhotonNetwork.LocalPlayer.ActorNumber == 2&& playerscore>=300)
         {
-            CreateTower();
+
+
+            CreateTower(PlayerPrefs.GetInt("SkinId", 0));
             playerscore = playerscore - 300;
             text.text = playerscore + "";
         }
     }
     
 
-    private void CreateTower()
+    private void CreateTower(int SkinId)
     {
         Vector3 spawnPosition = GetMouseWorldPosition();
-        currentTowerInstance = PhotonNetwork.Instantiate(towerPrefab.name, spawnPosition, Quaternion.identity);
+        currentTowerInstance = PhotonNetwork.Instantiate(towerPrefab[SkinId].name, spawnPosition, Quaternion.identity);
         isPlacingTower = true; // Iniciar el proceso de colocación
     }
     void Update()

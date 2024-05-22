@@ -6567,7 +6567,7 @@ MonoBehaviour:
   BotonCerrarSesion: {fileID: 593302155}
   BotonIniciarSesion: {fileID: 477051077}
   tiendapanel: {fileID: 1106919450}
-  panelOK: {fileID: 2105130484}
+  panelOK: {fileID: 345576272}
   funcionBoton: {fileID: 1290079263}
 --- !u!114 &1290079266
 MonoBehaviour:
