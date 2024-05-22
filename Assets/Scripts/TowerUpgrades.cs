@@ -43,6 +43,11 @@ public class TowerUpgrades : MonoBehaviour
         {
             Upgradepanel.SetActive(false);
             Upgradepanel.SetActive(true);
+            Transform detectionAreaTransform = selectedTower.transform.Find("Area");
+            if (detectionAreaTransform != null)
+            {
+                detectionAreaTransform.gameObject.SetActive(true);
+            }
             for (int i = 1; i <= 6; i++)
             {
                 Toggle toogle = GameObject.Find("Nivel " + i).GetComponent<Toggle>();
@@ -67,6 +72,11 @@ public class TowerUpgrades : MonoBehaviour
         {
             Upgradepanel2.SetActive(false);
             Upgradepanel2.SetActive(true);
+            Transform detectionAreaTransform = selectedTower.transform.Find("Area");
+            if (detectionAreaTransform != null)
+            {
+                detectionAreaTransform.gameObject.SetActive(true);
+            }
             if (selectedTower.nivel >= 6)
             {
                 GameObject.Find("btnUpgrade2").SetActive(false);

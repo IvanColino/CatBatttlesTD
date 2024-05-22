@@ -7,6 +7,8 @@ public class panelMaangement : MonoBehaviour
     // Start is called before the first frame update
     public GameObject panelganJ1,panelperJ2,paneljuego1,paneljuego2;
     public GameObject panelganJ2, panelperJ1;
+    
+
     void Start()
     {
         

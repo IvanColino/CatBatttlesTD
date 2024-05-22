@@ -6374,7 +6374,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1062441440}
         m_TargetAssemblyTypeName: EnemySending, Assembly-CSharp
-        m_MethodName: OnButtonPress2
+        m_MethodName: OnButtonPress3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7082,8 +7082,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -646.73, y: -0.5300293}
-  m_SizeDelta: {x: -1293.51, y: 15.05}
+  m_AnchoredPosition: {x: -616.26, y: -0.5300293}
+  m_SizeDelta: {x: -1232.57, y: 15.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1157565807
 MonoBehaviour:
