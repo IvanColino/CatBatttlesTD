@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class FuncionamientoBoton : MonoBehaviour
 {
     public GameObject confirmationPanel;
     public GameObject aplicacionPrincipalPanel;
-    public GameObject tiendapanel;
     public GameObject loginpanel;
     public GameObject registropanel;
     public GameObject BotonCerrarSesion;
     public GameObject BotonIniciarSesion;
-    public GameObject FuncionBoton;
+    public GameObject tiendapanel;
+    public GameObject panelOK;
+    public GameObject funcionBoton;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -72,11 +74,12 @@ public class FuncionamientoBoton : MonoBehaviour
         bool sessionActive = PlayerPrefs.HasKey("UserID");
         if (sessionActive)
         {
-
+            SceneManager.LoadScene("Juego");
         }
         else
         {
-
+            aplicacionPrincipalPanel.SetActive(false);
+            panelOK.SetActive(true);
         }
     }
 
@@ -85,17 +88,23 @@ public class FuncionamientoBoton : MonoBehaviour
         bool sessionActive = PlayerPrefs.HasKey("UserID");
         if (sessionActive)
         {
-            aplicacionPrincipalPanel.SetActive(false);
-            BotonCerrarSesion.SetActive(false);
-            BotonIniciarSesion.SetActive(false);
             tiendapanel.SetActive(true);
-            FuncionBoton.GetComponent<BuySkin>().CheckIfSkinPurchased();
+            aplicacionPrincipalPanel.SetActive(false);
+            funcionBoton.GetComponent<BuySkin>().CheckIfSkinPurchased();
         }
         else
         {
-
+            aplicacionPrincipalPanel.SetActive(false);
+            panelOK.SetActive(true);
         }
     }
+
+    public void AccionOK()
+    {
+        panelOK.SetActive(false);
+        aplicacionPrincipalPanel.SetActive(true);
+    }
+
     public void AccionExit()
     {
         aplicacionPrincipalPanel.SetActive(false);
