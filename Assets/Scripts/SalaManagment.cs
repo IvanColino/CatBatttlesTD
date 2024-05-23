@@ -8,6 +8,7 @@ using ExitGames.Client.Photon;
 
 public class SalaManager : MonoBehaviourPunCallbacks
 {
+    public GameObject BTNvOLVER;
     public TMP_InputField inputCrear, inputUnirse;
     public Button crear, unirse, empezar;
     public TextMeshProUGUI listadoJugadores, txtcrear, txtunirse, txtLobby;
@@ -25,6 +26,7 @@ public class SalaManager : MonoBehaviourPunCallbacks
 
     public void Update()
     {
+        BTNvOLVER.SetActive(false);
         if (PhotonNetwork.CurrentRoom != null)
         {
             if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
