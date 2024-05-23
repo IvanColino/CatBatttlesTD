@@ -38,9 +38,10 @@ public class EnemySpawner : MonoBehaviourPun
                 
                 currentRound++;
                 photonView.RPC("UpdateRoundOnClients", RpcTarget.All, currentRound);
-                if (currentRound >= rounds.Length)
+                if (currentRound > rounds.Length)
                 {
                     Time.timeScale = 0;
+                    photonView.RPC("Tie", RpcTarget.AllBuffered);
                 }
 
                   
@@ -60,5 +61,11 @@ public class EnemySpawner : MonoBehaviourPun
     {
         public GameObject enemyPrefab;  // Puedes tener diferentes prefabs para diferentes rondas
         public int enemyCount;          // Cantidad de enemigos en esta ronda
+    }
+    [PunRPC]
+    void Tie()
+    {
+        GameObject.Find("Funcionbotones").GetComponent<TowerManagement>().partidainiciada = false;
+        GameManager.Instance.LoadMenuAfterDelay(5.0f);
     }
 }

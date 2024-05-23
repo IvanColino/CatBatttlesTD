@@ -77,6 +77,11 @@ public class TowerUpgrades : MonoBehaviour
             {
                 detectionAreaTransform.gameObject.SetActive(true);
             }
+            for (int i = 1; i <= 6; i++)
+            {
+                Toggle toogle = GameObject.Find("Nivel2 " + i).GetComponent<Toggle>();
+                toogle.isOn = false;
+            }
             if (selectedTower.nivel >= 6)
             {
                 GameObject.Find("btnUpgrade2").SetActive(false);

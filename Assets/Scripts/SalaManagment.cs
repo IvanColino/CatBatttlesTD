@@ -40,10 +40,13 @@ public class SalaManager : MonoBehaviourPunCallbacks
                 jugadoresCompletos = false;
             }
 
-           
+            if (!funcionbotones.GetComponent<TowerManagement>().partidainiciada)
+            {
                 ActualizarListado();
+            }
+            }
           
-        }
+        
     }
 
     public void CrearSala()
